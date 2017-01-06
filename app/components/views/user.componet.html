@@ -1,0 +1,17 @@
+<h1>{{name}}</h1>
+    <h2>Hobbies</h2>
+    <ul>
+        <li *ngFor="let hobby of hobbies; let i = index">{{hobby}} <button (click)="deleteHobby(i)">X</button></li>
+    </ul>
+    <form (submit)="addHobbies(hobby.value)">
+        <input placeholder="Enter Hobbies to add" #hobby type="text"/>
+    </form>
+    <form>
+        <input type="text" name="name" [(ngModel)]="name" placeholder="Enter Name here"/>
+    </form>
+    <hr>
+    <h2>Retrieving posts from API</h2>
+    <div *ngFor="let post of posts">
+        <h3>{{post.id}}. {{post.title}}</h3>
+        <p>{{post.body}}</p>
+    </div>
